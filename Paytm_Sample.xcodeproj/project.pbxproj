@@ -13,6 +13,8 @@
 		D2791FEF1C97EE8C00E48583 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2791FED1C97EE8C00E48583 /* Main.storyboard */; };
 		D2791FF11C97EE8C00E48583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2791FF01C97EE8C00E48583 /* Assets.xcassets */; };
 		D2791FF41C97EE8C00E48583 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2791FF21C97EE8C00E48583 /* LaunchScreen.storyboard */; };
+		D27920031C97EEC800E48583 /* libPaymentsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D27920021C97EEC800E48583 /* libPaymentsSDK.a */; };
+		D27920051C97F35A00E48583 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27920041C97F35A00E48583 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,13 @@
 		D2791FF01C97EE8C00E48583 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2791FF31C97EE8C00E48583 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2791FF51C97EE8C00E48583 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2791FFD1C97EEC800E48583 /* PaymentsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentsSDK.h; sourceTree = "<group>"; };
+		D2791FFE1C97EEC800E48583 /* PGMerchantConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGMerchantConfiguration.h; sourceTree = "<group>"; };
+		D2791FFF1C97EEC800E48583 /* PGOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGOrder.h; sourceTree = "<group>"; };
+		D27920001C97EEC800E48583 /* PGServerEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGServerEnvironment.h; sourceTree = "<group>"; };
+		D27920011C97EEC800E48583 /* PGTransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGTransactionViewController.h; sourceTree = "<group>"; };
+		D27920021C97EEC800E48583 /* libPaymentsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentsSDK.a; sourceTree = "<group>"; };
+		D27920041C97F35A00E48583 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D27920051C97F35A00E48583 /* SystemConfiguration.framework in Frameworks */,
+				D27920031C97EEC800E48583 /* libPaymentsSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,8 @@
 		D2791FD81C97EE8C00E48583 = {
 			isa = PBXGroup;
 			children = (
+				D27920041C97F35A00E48583 /* SystemConfiguration.framework */,
+				D2791FFB1C97EEC800E48583 /* PaytmSDK */,
 				D2791FE31C97EE8C00E48583 /* Paytm_Sample */,
 				D2791FE21C97EE8C00E48583 /* Products */,
 			);
@@ -77,6 +90,27 @@
 				D2791FE51C97EE8C00E48583 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2791FFB1C97EEC800E48583 /* PaytmSDK */ = {
+			isa = PBXGroup;
+			children = (
+				D2791FFC1C97EEC800E48583 /* include */,
+				D27920021C97EEC800E48583 /* libPaymentsSDK.a */,
+			);
+			path = PaytmSDK;
+			sourceTree = "<group>";
+		};
+		D2791FFC1C97EEC800E48583 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				D2791FFD1C97EEC800E48583 /* PaymentsSDK.h */,
+				D2791FFE1C97EEC800E48583 /* PGMerchantConfiguration.h */,
+				D2791FFF1C97EEC800E48583 /* PGOrder.h */,
+				D27920001C97EEC800E48583 /* PGServerEnvironment.h */,
+				D27920011C97EEC800E48583 /* PGTransactionViewController.h */,
+			);
+			path = include;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,9 +228,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shishir Jain (43ATG9ZANG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shishir Jain (43ATG9ZANG)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -213,9 +249,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "667abf4d-37fc-4c5a-9f2c-141d2fc2afc2";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -237,9 +274,11 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shishir Jain (43ATG9ZANG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Shishir Jain (43ATG9ZANG)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -250,8 +289,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "667abf4d-37fc-4c5a-9f2c-141d2fc2afc2";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -261,10 +301,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shishir Jain (43ATG9ZANG)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Paytm_Sample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "akash.Paytm-Sample";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PaytmSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.seedoc.seedocapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "667abf4d-37fc-4c5a-9f2c-141d2fc2afc2";
 			};
 			name = Debug;
 		};
@@ -272,10 +320,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Shishir Jain (43ATG9ZANG)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Paytm_Sample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "akash.Paytm-Sample";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PaytmSDK",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = co.seedoc.seedocapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "667abf4d-37fc-4c5a-9f2c-141d2fc2afc2";
 			};
 			name = Release;
 		};

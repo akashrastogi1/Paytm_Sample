@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction)btnpaymentClicked:(UIButton *)sender;
 
 @end
 
