@@ -43,11 +43,13 @@
     orderDict[@"WEBSITE"] = @"healthonewap";
     //Order configuration in the order object
     orderDict[@"TXN_AMOUNT"] = @"1";
-    orderDict[@"ORDER_ID"] = @12324;//@"1232456";
+    NSTimeInterval  today = [[NSDate date] timeIntervalSince1970];
+    NSString *intervalString = [[NSString stringWithFormat:@"%f", today]stringByReplacingOccurrencesOfString:@"." withString:@""];
+    orderDict[@"ORDER_ID"] = intervalString;
     orderDict[@"REQUEST_TYPE"] = @"DEFAULT";
-    orderDict[@"CUST_ID"] = @"1234567890";
-    orderDict[@"MOBILE_NO"] = @"9540178557";
-    orderDict[@"EMAIL"] = @"akash.rastogi@seedoc.co";
+    orderDict[@"CUST_ID"] = @"123456789027";
+    orderDict[@"MOBILE_NO"] = @"9910045591";
+    orderDict[@"EMAIL"] = @"naveen.kothiyal@seedoc.co";
     
     PGOrder *order = [PGOrder orderWithParams:orderDict];
     
@@ -64,16 +66,19 @@
 #pragma mark - PGTransactionDelegate
 //Called when transaction has completed. response dictionary will be having details about transaction.
 - (void)didSucceedTransaction:(PGTransactionViewController *)controller response:(NSDictionary *)response{
+    [[[UIAlertView alloc]initWithTitle:@"Transaction Successfull" message:[NSString stringWithFormat:@"Response- %@", response] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil]show];
     [txnController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 //Called when transaction fails with any reason. Response dictionary will be having details about the failed transaction.
 - (void)didFailTransaction:(PGTransactionViewController *)controller error:(NSError *)error response:(NSDictionary *)response{
+    [[[UIAlertView alloc]initWithTitle:@"Transaction Failed" message:[NSString stringWithFormat:@"Error- %@\n\nResponse- %@", error.description, response] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil]show];
     [txnController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 //Called when a transaction is cancelled by the user. Response dictionary will be having details about the cancelled transaction.
 - (void)didCancelTransaction:(PGTransactionViewController *)controller error:(NSError*)error response:(NSDictionary *)response{
+    [[[UIAlertView alloc]initWithTitle:@"Transaction Cancelled" message:[NSString stringWithFormat:@"Error- %@\n\nResponse- %@", error.description, response] delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil]show];
     [txnController dismissViewControllerAnimated:YES completion:NULL];
 }
 
